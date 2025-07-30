@@ -25,6 +25,9 @@
                 <li><a href="#" onclick="openAuthModal('login')" class="nav-auth">Войти</a></li>
             </ul>
             <div class="auth-buttons">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Переключить тему">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
                 <button class="btn-auth btn-login" onclick="openAuthModal('login')">
                     <i class="fas fa-sign-in-alt"></i>
                     Войти
@@ -37,6 +40,7 @@
             </div>
         </nav>
     </header>
+
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-background">
