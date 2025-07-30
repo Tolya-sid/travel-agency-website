@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Турагентство - лучшие туры по всему миру. Индивидуальный подбор туров, горящие путевки, виза поддержка.">
+    <title>Турагентство - Ваше путешествие начинается здесь</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-globe-americas"></i>
+                <span>TravelAgent</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#destinations">Направления</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Откройте мир вместе с нами</h1>
+            <p class="hero-subtitle">Профессиональное турагентство с индивидуальным подходом к каждому клиенту</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <i class="fas fa-paper-plane"></i>
+                    Подобрать тур
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('services')">
+                    <i class="fas fa-info-circle"></i>
+                    Узнать больше
+                </button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Довольных клиентов</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Стран</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Лет опыта</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши услуги</h2>
+                <p>Полный спектр туристических услуг для незабываемого отдыха</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Индивидуальные туры</h3>
+                    <p>Разработаем маршрут специально для вас с учетом всех ваших пожеланий и бюджета</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Авиабилеты</h3>
+                    <p>Поиск и бронирование авиабилетов по лучшим ценам от ведущих авиакомпаний</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Отели</h3>
+                    <p>Бронирование отелей любой категории по всему миру с гарантией лучшей цены</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Визовая поддержка</h3>
+                    <p>Помощь в оформлении виз и необходимых документов для путешествий</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Страхование</h3>
+                    <p>Туристическое страхование для безопасности во время путешествий</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Поддержка</h3>
+                    <p>Круглосуточная поддержка во время вашего путешествия</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Популярные направления</h2>
+                <p>Самые востребованные туристические направления</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="destination-overlay">
+                            <h3>Турция</h3>
+                            <p>От 35 000 ₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="destination-overlay">
+                            <h3>Египет</h3>
+                            <p>От 45 000 ₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1571406252241-db2c9ff3c3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="destination-overlay">
+                            <h3>Греция</h3>
+                            <p>От 55 000 ₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1529260830199-42c24126f198?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="destination-overlay">
+                            <h3>Таиланд</h3>
+                            <p>От 65 000 ₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Свяжитесь с нами</h2>
+                <p>Мы поможем подобрать идеальный тур для вас</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>+7 (xxx) xxx-xx-xx</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@travelagent.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Адрес</h4>
+                            <p>г. Москва, ул. Примерная, д. 1</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Режим работы</h4>
+                            <p>Пн-Пт: 9:00-19:00<br>Сб-Вс: 10:00-17:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Выберите услугу</option>
+                            <option value="individual">Индивидуальный тур</option>
+                            <option value="group">Групповой тур</option>
+                            <option value="tickets">Авиабилеты</option>
+                            <option value="hotel">Отель</option>
+                            <option value="visa">Виза</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Ваше сообщение" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Отправить заявку
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>TravelAgent</span>
+                    </div>
+                    <p>Ваш надежный партнер в мире путешествий</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#services">Индивидуальные туры</a></li>
+                        <li><a href="#services">Авиабилеты</a></li>
+                        <li><a href="#services">Отели</a></li>
+                        <li><a href="#services">Визовая поддержка</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Направления</h4>
+                    <ul>
+                        <li><a href="#destinations">Турция</a></li>
+                        <li><a href="#destinations">Египет</a></li>
+                        <li><a href="#destinations">Греция</a></li>
+                        <li><a href="#destinations">Таиланд</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +7 (xxx) xxx-xx-xx</li>
+                        <li><i class="fas fa-envelope"></i> info@travelagent.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelAgent. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
