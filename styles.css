@@ -553,53 +553,69 @@ section {
 }
 
 .checkmark {
-    width: 24px;
-    height: 24px;
-    border: 3px solid var(--border-color);
-    border-radius: 50%;
-    background: var(--bg-primary);
-    position: relative;
-    flex-shrink: 0;
-    margin-top: 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    min-width: 24px;
-    min-height: 24px;
-    max-width: 24px;
-    max-height: 24px;
+    width: 28px !important;
+    height: 28px !important;
+    border: 4px solid var(--border-color) !important;
+    border-radius: 50% !important;
+    background: var(--bg-primary) !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    margin-top: 0 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    display: block !important;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-    background: #2563eb;
-    border-color: #2563eb;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    content: '✓' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    display: block !important;
 }
 
 .checkbox-label:hover .checkmark {
-    border-color: #2563eb;
-    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
-    transform: scale(1.05);
+    border-color: #2563eb !important;
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2) !important;
+    transform: scale(1.05) !important;
 }
 
 .checkbox-label:hover {
-    color: #2563eb;
+    color: #2563eb !important;
 }
 
 .checkbox-label:focus-within .checkmark {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Принудительное отображение галочки */
+.checkbox-label input[type="checkbox"]:checked ~ .checkmark::after {
+    content: '✓' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    display: block !important;
+    z-index: 10 !important;
 }
 
 .privacy-link {
@@ -921,18 +937,18 @@ section {
     }
     
     .checkmark {
-        width: 22px;
-        height: 22px;
-        min-width: 22px;
-        min-height: 22px;
-        max-width: 22px;
-        max-height: 22px;
-        border-radius: 50%;
-        border-width: 3px;
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        min-height: 26px !important;
+        max-width: 26px !important;
+        max-height: 26px !important;
+        border-radius: 50% !important;
+        border-width: 4px !important;
     }
     
     .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-        font-size: 14px;
+        font-size: 16px !important;
     }
 }
 
@@ -1016,18 +1032,18 @@ section {
     }
     
     .checkmark {
-        width: 20px;
-        height: 20px;
-        min-width: 20px;
-        min-height: 20px;
-        max-width: 20px;
-        max-height: 20px;
-        border-radius: 50%;
-        border-width: 3px;
+        width: 24px !important;
+        height: 24px !important;
+        min-width: 24px !important;
+        min-height: 24px !important;
+        max-width: 24px !important;
+        max-height: 24px !important;
+        border-radius: 50% !important;
+        border-width: 4px !important;
     }
     
     .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-        font-size: 12px;
+        font-size: 14px !important;
     }
 }
 
