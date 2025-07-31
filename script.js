@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
+    // Initialize theme and auth state
+    initTheme();
+    checkAuthState();
+
     // Toggle mobile menu
     navToggle.addEventListener('click', function() {
         navToggle.classList.toggle('active');
@@ -42,12 +46,24 @@ function scrollToSection(sectionId) {
 // Header background on scroll
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        if (currentTheme === 'dark') {
+            header.style.background = 'rgba(15, 23, 42, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        }
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = 'none';
+        if (currentTheme === 'dark') {
+            header.style.background = 'rgba(15, 23, 42, 0.95)';
+            header.style.boxShadow = 'none';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = 'none';
+        }
     }
 });
 
@@ -69,6 +85,13 @@ if (contactForm) {
         // Basic validation
         if (!formData.name || !formData.phone || !formData.service) {
             showNotification('Пожалуйста, заполните обязательные поля', 'error');
+            return;
+        }
+
+        // Check privacy agreement
+        const privacyAgreement = document.getElementById('contactPrivacy').checked;
+        if (!privacyAgreement) {
+            showNotification('Необходимо согласиться с политикой конфиденциальности', 'error');
             return;
         }
 
@@ -274,6 +297,29 @@ function initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
+    updateHeaderTheme();
+}
+
+function updateThemeIcon(theme) {
+    const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) {
+        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
+function updateHeaderTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const header = document.querySelector('.header');
+    
+    if (header) {
+        if (currentTheme === 'dark') {
+            header.style.background = 'rgba(15, 23, 42, 0.95)';
+            header.style.borderBottomColor = '#334155';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.borderBottomColor = '#e5e7eb';
+        }
+    }
 }
 
 function toggleTheme() {
@@ -283,15 +329,9 @@ function toggleTheme() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+    updateHeaderTheme();
     
     showNotification(`Переключено на ${newTheme === 'dark' ? 'темную' : 'светлую'} тему`, 'info');
-}
-
-function updateThemeIcon(theme) {
-    const themeIcon = document.getElementById('theme-icon');
-    if (themeIcon) {
-        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
 }
 
 // Authentication System
@@ -358,10 +398,17 @@ function handleRegister(event) {
     const phone = document.getElementById('registerPhone').value;
     const password = document.getElementById('registerPassword').value;
     const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
+    const privacyAgreement = document.getElementById('registerPrivacy').checked;
 
     // Validate passwords match
     if (password !== passwordConfirm) {
         showNotification('Пароли не совпадают', 'error');
+        return;
+    }
+
+    // Check privacy agreement
+    if (!privacyAgreement) {
+        showNotification('Необходимо согласиться с политикой конфиденциальности', 'error');
         return;
     }
 
@@ -399,6 +446,7 @@ function updateAuthState() {
     const body = document.body;
     const authButtons = document.querySelector('.auth-buttons');
     const navAuth = document.querySelector('.nav-auth');
+    const themeToggle = document.querySelector('.theme-toggle');
     
     if (currentUser) {
         body.classList.add('user-logged-in');
@@ -421,9 +469,22 @@ function updateAuthState() {
             navAuth.textContent = currentUser.name;
             navAuth.onclick = () => openCabinet();
         }
+        
+        // Keep theme toggle visible but hide other auth buttons
+        if (themeToggle) {
+            themeToggle.style.display = 'flex';
+        }
     } else {
         body.classList.remove('user-logged-in');
+        
+        // Show all auth buttons when logged out
+        if (themeToggle) {
+            themeToggle.style.display = 'flex';
+        }
     }
+    
+    // Update header theme
+    updateHeaderTheme();
 }
 
 function logout() {

@@ -106,11 +106,32 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 .nav-brand i {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    color: #2563eb;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-main {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.brand-sub {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #6b7280;
+    letter-spacing: 0.5px;
 }
 
 .nav-menu {
@@ -481,11 +502,77 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    margin-bottom: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-primary);
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-label:hover .checkmark {
+    border-color: #2563eb;
+}
+
+.privacy-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .privacy-link {
+    color: #60a5fa;
 }
 
 /* Footer */
@@ -509,12 +596,13 @@ section {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #60a5fa;
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .footer-brand i {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    color: #2563eb;
 }
 
 .footer-section h4 {
@@ -777,6 +865,14 @@ section {
     color: #60a5fa !important;
 }
 
+[data-theme="dark"] .nav-menu a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav-menu a:hover {
+    color: #60a5fa;
+}
+
 [data-theme="dark"] .theme-toggle {
     background: var(--bg-tertiary);
     border-color: var(--border-color);
@@ -794,6 +890,10 @@ section {
 
 [data-theme="dark"] .btn-login:hover {
     background: #2563eb;
+}
+
+[data-theme="dark"] .user-info {
+    color: #60a5fa;
 }
 
 /* Modal Styles */
@@ -1180,6 +1280,12 @@ section {
 
 /* User State */
 .user-logged-in .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-logged-in .btn-login {
     display: none;
 }
 
