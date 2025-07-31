@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initTheme();
     checkAuthState();
 
+    // Add checkbox error clearing
+    const privacyCheckboxes = document.querySelectorAll('#registerPrivacy, #contactPrivacy');
+    privacyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const group = this.closest('.checkbox-group');
+            if (group && this.checked) {
+                group.classList.remove('error');
+            }
+        });
+    });
+
     // Toggle mobile menu
     navToggle.addEventListener('click', function() {
         navToggle.classList.toggle('active');
@@ -90,7 +101,13 @@ if (contactForm) {
 
         // Check privacy agreement
         const privacyAgreement = document.getElementById('contactPrivacy').checked;
+        const privacyGroup = document.querySelector('#contactPrivacy').closest('.checkbox-group');
+        
+        // Clear previous errors
+        privacyGroup.classList.remove('error');
+        
         if (!privacyAgreement) {
+            privacyGroup.classList.add('error');
             showNotification('Необходимо согласиться с политикой конфиденциальности', 'error');
             return;
         }
@@ -399,6 +416,10 @@ function handleRegister(event) {
     const password = document.getElementById('registerPassword').value;
     const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
     const privacyAgreement = document.getElementById('registerPrivacy').checked;
+    const privacyGroup = document.querySelector('#registerPrivacy').closest('.checkbox-group');
+
+    // Clear previous errors
+    privacyGroup.classList.remove('error');
 
     // Validate passwords match
     if (password !== passwordConfirm) {
@@ -408,6 +429,7 @@ function handleRegister(event) {
 
     // Check privacy agreement
     if (!privacyAgreement) {
+        privacyGroup.classList.add('error');
         showNotification('Необходимо согласиться с политикой конфиденциальности', 'error');
         return;
     }
