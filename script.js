@@ -467,7 +467,6 @@ function checkAuthState() {
 function updateAuthState() {
     const body = document.body;
     const authButtons = document.querySelector('.auth-buttons');
-    const navAuth = document.querySelector('.nav-auth');
     const themeToggle = document.querySelector('.theme-toggle');
     
     if (currentUser) {
@@ -485,12 +484,6 @@ function updateAuthState() {
             <i class="fas fa-user-circle"></i>
             <span onclick="openCabinet()" style="cursor: pointer;">${currentUser.name}</span>
         `;
-        
-        // Update nav link
-        if (navAuth) {
-            navAuth.textContent = currentUser.name;
-            navAuth.onclick = () => openCabinet();
-        }
         
         // Keep theme toggle visible but hide other auth buttons
         if (themeToggle) {
