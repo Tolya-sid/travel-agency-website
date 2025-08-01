@@ -3,161 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Турагентство - лучшие туры по всему миру. Индивидуальный подбор туров, горящие путевки, виза поддержка.">
+    <meta name="description" content="TourMarket - современное турагентство с лучшими ценами на туры. Поиск и бронирование туров онлайн.">
+    <title>TourMarket - Современное турагентство | Поиск туров онлайн</title>
+    <link rel="stylesheet" href="styles.css?v=2024.1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Турагентство - Ваше путешествие начинается здесь</title>
-    <link rel="stylesheet" href="styles.css?v=2024.10">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <i class="fas fa-globe-americas"></i>
-                <div class="brand-text">
-                    <span class="brand-main">TourMarket</span>
-                    <span class="brand-sub">agency</span>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <a href="tel:+78001234567" class="header-phone">
+                            <i class="fas fa-phone"></i>
+                            8 800 123-45-67
+                        </a>
+                        <span class="header-phone-text">Бесплатно по России</span>
+                    </div>
+                    <div class="header-actions">
+                        <button class="theme-toggle" onclick="toggleTheme()" title="Переключить тему">
+                            <i class="fas fa-moon" id="theme-icon"></i>
+                        </button>
+                        <button class="btn-auth" onclick="openAuthModal('login')">
+                            <i class="fas fa-user"></i>
+                            Войти
+                        </button>
+                    </div>
                 </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#hero">Главная</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#destinations">Направления</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="theme-toggle" onclick="toggleTheme()" title="Переключить тему">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </button>
-                <button class="btn-auth btn-login" onclick="openAuthModal('login')">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Войти
-                </button>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav-brand">
+                        <i class="fas fa-globe-americas"></i>
+                        <div class="brand-text">
+                            <span class="brand-main">TourMarket</span>
+                            <span class="brand-sub">agency</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="#search" class="nav-link">Поиск туров</a></li>
+                        <li><a href="#destinations" class="nav-link">Направления</a></li>
+                        <li><a href="#hotels" class="nav-link">Отели</a></li>
+                        <li><a href="#flights" class="nav-link">Авиабилеты</a></li>
+                        <li><a href="#about" class="nav-link">О компании</a></li>
+                    </ul>
+                    
+                    <div class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
             </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <!-- Hero Section with Search -->
+    <section id="search" class="hero">
         <div class="hero-background">
             <div class="hero-overlay"></div>
         </div>
-        <div class="hero-content">
-            <h1 class="hero-title">Откройте мир вместе с нами</h1>
-            <p class="hero-subtitle">Профессиональное турагентство с индивидуальным подходом к каждому клиенту</p>
-            <div class="hero-features">
-                <div class="hero-feature">
-                    <i class="fas fa-credit-card"></i>
-                    <span>Рассрочка до 12 месяцев</span>
-                </div>
-                <div class="hero-feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Гарантия честной цены</span>
-                </div>
-                <div class="hero-feature">
-                    <i class="fas fa-headset"></i>
-                    <span>24/7 поддержка</span>
-                </div>
-            </div>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="scrollToSection('contact')">
-                    <i class="fas fa-paper-plane"></i>
-                    Подобрать тур
-                </button>
-                <button class="btn btn-secondary" onclick="scrollToSection('services')">
-                    <i class="fas fa-info-circle"></i>
-                    Узнать больше
-                </button>
-            </div>
-        </div>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Довольных клиентов</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Стран</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">5</span>
-                <span class="stat-label">Лет опыта</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
-                <h2>Наши услуги</h2>
-                <p>Полный спектр туристических услуг для незабываемого отдыха</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+            <div class="hero-content">
+                <h1 class="hero-title">Найдите идеальный тур</h1>
+                <p class="hero-subtitle">Сравните цены от всех туроператоров и забронируйте лучший отдых</p>
+                
+                <!-- Search Form -->
+                <div class="search-form">
+                    <div class="search-tabs">
+                        <button class="search-tab active" onclick="switchSearchTab('tours')">
+                            <i class="fas fa-suitcase"></i>
+                            Туры
+                        </button>
+                        <button class="search-tab" onclick="switchSearchTab('hotels')">
+                            <i class="fas fa-bed"></i>
+                            Отели
+                        </button>
+                        <button class="search-tab" onclick="switchSearchTab('flights')">
+                            <i class="fas fa-plane"></i>
+                            Авиабилеты
+                        </button>
                     </div>
-                    <h3>Индивидуальные туры</h3>
-                    <p>Разработаем маршрут специально для вас с учетом всех ваших пожеланий и бюджета</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-plane-departure"></i>
+                    
+                    <div class="search-content">
+                        <!-- Tours Search -->
+                        <div id="tours-search" class="search-panel active">
+                            <div class="search-row">
+                                <div class="search-field">
+                                    <label>Откуда</label>
+                                    <input type="text" placeholder="Москва" value="Москва">
+                                </div>
+                                <div class="search-field">
+                                    <label>Куда</label>
+                                    <input type="text" placeholder="Выберите направление">
+                                </div>
+                                <div class="search-field">
+                                    <label>Дата вылета</label>
+                                    <input type="date" value="2024-07-01">
+                                </div>
+                                <div class="search-field">
+                                    <label>Дата возвращения</label>
+                                    <input type="date" value="2024-07-15">
+                                </div>
+                            </div>
+                            <div class="search-row">
+                                <div class="search-field">
+                                    <label>Количество ночей</label>
+                                    <select>
+                                        <option>7-10 ночей</option>
+                                        <option>11-14 ночей</option>
+                                        <option>15+ ночей</option>
+                                    </select>
+                                </div>
+                                <div class="search-field">
+                                    <label>Количество туристов</label>
+                                    <select>
+                                        <option>2 взрослых</option>
+                                        <option>1 взрослый</option>
+                                        <option>Семья с детьми</option>
+                                    </select>
+                                </div>
+                                <div class="search-field">
+                                    <label>Отель</label>
+                                    <select>
+                                        <option>Любой</option>
+                                        <option>3 звезды</option>
+                                        <option>4 звезды</option>
+                                        <option>5 звезд</option>
+                                    </select>
+                                </div>
+                                <div class="search-field">
+                                    <label>Питание</label>
+                                    <select>
+                                        <option>Любое</option>
+                                        <option>Только завтрак</option>
+                                        <option>Полупансион</option>
+                                        <option>Полный пансион</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hotels Search -->
+                        <div id="hotels-search" class="search-panel">
+                            <div class="search-row">
+                                <div class="search-field">
+                                    <label>Город</label>
+                                    <input type="text" placeholder="Выберите город">
+                                </div>
+                                <div class="search-field">
+                                    <label>Дата заезда</label>
+                                    <input type="date">
+                                </div>
+                                <div class="search-field">
+                                    <label>Дата выезда</label>
+                                    <input type="date">
+                                </div>
+                                <div class="search-field">
+                                    <label>Гости</label>
+                                    <select>
+                                        <option>2 взрослых</option>
+                                        <option>1 взрослый</option>
+                                        <option>Семья с детьми</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Flights Search -->
+                        <div id="flights-search" class="search-panel">
+                            <div class="search-row">
+                                <div class="search-field">
+                                    <label>Откуда</label>
+                                    <input type="text" placeholder="Москва">
+                                </div>
+                                <div class="search-field">
+                                    <label>Куда</label>
+                                    <input type="text" placeholder="Выберите город">
+                                </div>
+                                <div class="search-field">
+                                    <label>Дата туда</label>
+                                    <input type="date">
+                                </div>
+                                <div class="search-field">
+                                    <label>Дата обратно</label>
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="search-actions">
+                            <button class="btn btn-primary btn-search">
+                                <i class="fas fa-search"></i>
+                                Найти
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-heart"></i>
+                                Избранное
+                            </button>
+                        </div>
                     </div>
-                    <h3>Авиабилеты</h3>
-                    <p>Поиск и бронирование авиабилетов по лучшим ценам от ведущих авиакомпаний</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-                    <h3>Отели</h3>
-                    <p>Бронирование отелей любой категории по всему миру с гарантией лучшей цены</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-passport"></i>
-                    </div>
-                    <h3>Визовая поддержка</h3>
-                    <p>Помощь в оформлении виз и необходимых документов для путешествий</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Страхование</h3>
-                    <p>Туристическое страхование для безопасности во время путешествий</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Поддержка</h3>
-                    <p>Круглосуточная поддержка во время вашего путешествия</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Оплата в рассрочку</h3>
-                    <p>Возможность оплаты тура в рассрочку до 12 месяцев без переплат</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <h3>Личный кабинет</h3>
-                    <p>Управляйте бронированиями, отслеживайте статус заявок в удобном личном кабинете</p>
                 </div>
             </div>
         </div>
@@ -168,38 +222,74 @@
         <div class="container">
             <div class="section-header">
                 <h2>Популярные направления</h2>
-                <p>Самые востребованные туристические направления</p>
+                <p>Выберите идеальное место для вашего отдыха</p>
             </div>
+            
             <div class="destinations-grid">
                 <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&h=300&fit=crop" alt="Турция">
                         <div class="destination-overlay">
-                            <h3>Турция</h3>
-                            <p>От 35 000 ₽</p>
+                            <div class="destination-price">от 45 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Турция</h3>
+                        <p>Анталья, Стамбул, Бодрум</p>
+                        <div class="destination-stats">
+                            <span><i class="fas fa-thermometer-half"></i> +30°C</span>
+                            <span><i class="fas fa-clock"></i> 3-4 часа</span>
                         </div>
                     </div>
                 </div>
+                
                 <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Египет">
                         <div class="destination-overlay">
-                            <h3>Египет</h3>
-                            <p>От 45 000 ₽</p>
+                            <div class="destination-price">от 65 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Египет</h3>
+                        <p>Хургада, Шарм-эль-Шейх</p>
+                        <div class="destination-stats">
+                            <span><i class="fas fa-thermometer-half"></i> +35°C</span>
+                            <span><i class="fas fa-clock"></i> 4-5 часов</span>
                         </div>
                     </div>
                 </div>
+                
                 <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1571406252241-db2c9ff3c3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&h=300&fit=crop" alt="Греция">
                         <div class="destination-overlay">
-                            <h3>Греция</h3>
-                            <p>От 55 000 ₽</p>
+                            <div class="destination-price">от 75 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Греция</h3>
+                        <p>Крит, Родос, Санторини</p>
+                        <div class="destination-stats">
+                            <span><i class="fas fa-thermometer-half"></i> +28°C</span>
+                            <span><i class="fas fa-clock"></i> 3-4 часа</span>
                         </div>
                     </div>
                 </div>
+                
                 <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1529260830199-42c24126f198?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&h=300&fit=crop" alt="Таиланд">
                         <div class="destination-overlay">
-                            <h3>Таиланд</h3>
-                            <p>От 65 000 ₽</p>
+                            <div class="destination-price">от 85 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Таиланд</h3>
+                        <p>Пхукет, Паттайя, Бангкок</p>
+                        <div class="destination-stats">
+                            <span><i class="fas fa-thermometer-half"></i> +32°C</span>
+                            <span><i class="fas fa-clock"></i> 8-10 часов</span>
                         </div>
                     </div>
                 </div>
@@ -207,80 +297,41 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <div class="section-header">
-                <h2>Свяжитесь с нами</h2>
-                <p>Мы поможем подобрать идеальный тур для вас</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Телефон</h4>
-                            <p>+7 (xxx) xxx-xx-xx</p>
-                        </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@travelagent.ru</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Адрес</h4>
-                            <p>г. Москва, ул. Примерная, д. 1</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Режим работы</h4>
-                            <p>Пн-Пт: 9:00-19:00<br>Сб-Вс: 10:00-17:00</p>
-                        </div>
-                    </div>
+                    <h3>Безопасное бронирование</h3>
+                    <p>Все туры застрахованы и защищены</p>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                    <h3>Лучшие цены</h3>
+                    <p>Гарантия лучшей цены или возврат разницы</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email">
+                    <h3>24/7 поддержка</h3>
+                    <p>Круглосуточная поддержка в путешествии</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
                     </div>
-                    <div class="form-group">
-                        <select id="service" name="service" required>
-                            <option value="">Выберите услугу</option>
-                            <option value="individual">Индивидуальный тур</option>
-                            <option value="group">Групповой тур</option>
-                            <option value="tickets">Авиабилеты</option>
-                            <option value="hotel">Отель</option>
-                            <option value="visa">Виза</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Ваше сообщение" rows="4"></textarea>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <span>Я согласен с <a href="privacy-policy.txt" target="_blank" class="privacy-link">политикой конфиденциальности</a></span>
-                            <input type="checkbox" id="contactPrivacy" required>
-                            <span class="checkmark"></span>
-                        </label>
-                        <div class="checkbox-error-message">Необходимо согласиться с политикой конфиденциальности</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Отправить заявку
-                    </button>
-                </form>
+                    <h3>Рассрочка 0%</h3>
+                    <p>Оплачивайте тур частями без переплат</p>
+                </div>
             </div>
         </div>
     </section>
@@ -297,7 +348,7 @@
                             <span class="brand-sub">agency</span>
                         </div>
                     </div>
-                    <p>Ваш надежный партнер в мире путешествий</p>
+                    <p>Современное турагентство с лучшими ценами и сервисом</p>
                     <div class="social-links">
                         <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
                         <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
@@ -305,33 +356,37 @@
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Услуги</h4>
+                    <h4>Туры</h4>
                     <ul>
-                        <li><a href="#services">Индивидуальные туры</a></li>
-                        <li><a href="#services">Авиабилеты</a></li>
-                        <li><a href="#services">Отели</a></li>
-                        <li><a href="#services">Визовая поддержка</a></li>
+                        <li><a href="#">Горящие туры</a></li>
+                        <li><a href="#">Раннее бронирование</a></li>
+                        <li><a href="#">Экскурсионные туры</a></li>
+                        <li><a href="#">Горнолыжные туры</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
                     <h4>Направления</h4>
                     <ul>
-                        <li><a href="#destinations">Турция</a></li>
-                        <li><a href="#destinations">Египет</a></li>
-                        <li><a href="#destinations">Греция</a></li>
-                        <li><a href="#destinations">Таиланд</a></li>
+                        <li><a href="#">Турция</a></li>
+                        <li><a href="#">Египет</a></li>
+                        <li><a href="#">Греция</a></li>
+                        <li><a href="#">Таиланд</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Контакты</h4>
+                    <h4>Поддержка</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> +7 (xxx) xxx-xx-xx</li>
-                        <li><i class="fas fa-envelope"></i> info@travelagent.ru</li>
+                        <li><i class="fas fa-phone"></i> 8 800 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@tourmarket.ru</li>
                         <li><i class="fas fa-map-marker-alt"></i> г. Москва</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 TourMarket. Все права защищены.</p>
             </div>
@@ -343,7 +398,6 @@
         <div class="modal-content">
             <span class="modal-close" onclick="closeAuthModal()">&times;</span>
             
-            <!-- Login Form -->
             <div id="loginForm" class="auth-form">
                 <h2>Вход в личный кабинет</h2>
                 <form onsubmit="handleLogin(event)">
@@ -363,7 +417,6 @@
                 </p>
             </div>
 
-            <!-- Register Form -->
             <div id="registerForm" class="auth-form" style="display: none;">
                 <h2>Регистрация</h2>
                 <form onsubmit="handleRegister(event)">
@@ -402,93 +455,6 @@
         </div>
     </div>
 
-    <!-- Personal Cabinet -->
-    <div id="personalCabinet" class="modal cabinet-modal">
-        <div class="modal-content cabinet-content">
-            <div class="cabinet-header">
-                <h2>Личный кабинет</h2>
-                <button class="modal-close" onclick="closeCabinet()">&times;</button>
-            </div>
-            
-            <div class="cabinet-nav">
-                <button class="cabinet-tab active" onclick="showCabinetTab('profile')">
-                    <i class="fas fa-user"></i>
-                    Профиль
-                </button>
-                <button class="cabinet-tab" onclick="showCabinetTab('bookings')">
-                    <i class="fas fa-suitcase"></i>
-                    Мои туры
-                </button>
-                <button class="cabinet-tab" onclick="showCabinetTab('payments')">
-                    <i class="fas fa-credit-card"></i>
-                    Платежи
-                </button>
-                <button class="cabinet-logout" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Выйти
-                </button>
-            </div>
-
-            <!-- Profile Tab -->
-            <div id="profileTab" class="cabinet-tab-content active">
-                <h3>Личная информация</h3>
-                <form id="profileForm" onsubmit="updateProfile(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Имя и фамилия</label>
-                            <input type="text" id="profileName" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="profileEmail" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Телефон</label>
-                            <input type="tel" id="profilePhone" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Дата рождения</label>
-                            <input type="date" id="profileBirthdate">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i>
-                        Сохранить изменения
-                    </button>
-                </form>
-            </div>
-
-            <!-- Bookings Tab -->
-            <div id="bookingsTab" class="cabinet-tab-content">
-                <h3>Мои туры и бронирования</h3>
-                <div id="bookingsList" class="bookings-list">
-                    <!-- Booking items will be loaded here -->
-                </div>
-            </div>
-
-            <!-- Payments Tab -->
-            <div id="paymentsTab" class="cabinet-tab-content">
-                <h3>История платежей и рассрочка</h3>
-                <div class="payments-info">
-                    <div class="payment-card">
-                        <h4><i class="fas fa-info-circle"></i> Условия рассрочки</h4>
-                        <ul>
-                            <li>Рассрочка до 12 месяцев без переплат</li>
-                            <li>Первоначальный взнос от 20%</li>
-                            <li>Оформление за 5 минут онлайн</li>
-                            <li>Без справок о доходах</li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="paymentsList" class="payments-list">
-                    <!-- Payment history will be loaded here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js?v=2024"></script>
+    <script src="script.js"></script>
 </body>
 </html>
