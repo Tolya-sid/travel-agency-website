@@ -1,31 +1,31 @@
 /* CSS Variables for Themes */
 :root {
-    /* Light Theme */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-tertiary: #e5e7eb;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-tertiary: #9ca3af;
-    --border-color: #e5e7eb;
-    --header-bg: rgba(255, 255, 255, 0.95);
+    /* Light Theme - Warm Yellow-Orange */
+    --bg-primary: #fffaf0;
+    --bg-secondary: #fef3c7;
+    --bg-tertiary: #fde68a;
+    --text-primary: #92400e;
+    --text-secondary: #b45309;
+    --text-tertiary: #d97706;
+    --border-color: #fbbf24;
+    --header-bg: rgba(255, 250, 240, 0.95);
     --card-bg: #ffffff;
-    --shadow-light: rgba(0, 0, 0, 0.05);
-    --shadow-medium: rgba(0, 0, 0, 0.1);
-    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --shadow-light: rgba(245, 158, 11, 0.1);
+    --shadow-medium: rgba(245, 158, 11, 0.2);
+    --shadow-dark: rgba(245, 158, 11, 0.3);
 }
 
 [data-theme="dark"] {
-    /* Dark Theme */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-tertiary: #94a3b8;
-    --border-color: #334155;
-    --header-bg: rgba(15, 23, 42, 0.95);
-    --card-bg: #1e293b;
+    /* Dark Theme - Warm Dark Orange */
+    --bg-primary: #451a03;
+    --bg-secondary: #7c2d12;
+    --bg-tertiary: #9a3412;
+    --text-primary: #fed7aa;
+    --text-secondary: #fdba74;
+    --text-tertiary: #fb923c;
+    --border-color: #ea580c;
+    --header-bg: rgba(69, 26, 3, 0.95);
+    --card-bg: #7c2d12;
     --shadow-light: rgba(0, 0, 0, 0.3);
     --shadow-medium: rgba(0, 0, 0, 0.4);
     --shadow-dark: rgba(0, 0, 0, 0.6);
@@ -114,7 +114,7 @@ body {
 
 .nav-brand i {
     font-size: 1.8rem;
-    color: #2563eb;
+    color: #f59e0b;
 }
 
 .brand-text {
@@ -294,14 +294,14 @@ body {
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: #f59e0b;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #1d4ed8;
+    background: #d97706;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
 }
 
 .btn-secondary {
@@ -312,7 +312,7 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #2563eb;
+    color: #f59e0b;
     transform: translateY(-2px);
 }
 
@@ -559,8 +559,8 @@ section {
 }
 
 .checkbox-label .checkmark {
-    width: 14px !important;
-    height: 14px !important;
+    width: 17px !important;
+    height: 17px !important;
     border: 2px solid var(--border-color) !important;
     border-radius: 50% !important;
     background: var(--bg-primary) !important;
@@ -569,19 +569,19 @@ section {
     margin-top: 0 !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-    min-width: 14px !important;
-    min-height: 14px !important;
-    max-width: 14px !important;
-    max-height: 14px !important;
+    min-width: 17px !important;
+    min-height: 17px !important;
+    max-width: 17px !important;
+    max-height: 17px !important;
     display: inline-block !important;
-    flex-basis: 14px !important;
+    flex-basis: 17px !important;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-    background: #2563eb !important;
-    border-color: #2563eb !important;
+    background: #f59e0b !important;
+    border-color: #f59e0b !important;
     transform: scale(1.1) !important;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
@@ -591,7 +591,7 @@ section {
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     color: white !important;
-    font-size: 9px !important;
+    font-size: 11px !important;
     font-weight: bold !important;
     display: block !important;
     z-index: 10 !important;
@@ -627,7 +627,7 @@ section {
 }
 
 .privacy-link {
-    color: #2563eb;
+    color: #f59e0b;
     text-decoration: none;
     font-weight: 600;
     border-bottom: 1px solid transparent;
@@ -636,15 +636,15 @@ section {
 
 .privacy-link:hover {
     text-decoration: none;
-    border-bottom-color: #2563eb;
+    border-bottom-color: #f59e0b;
 }
 
 [data-theme="dark"] .privacy-link {
-    color: #60a5fa;
+    color: #fb923c;
 }
 
 [data-theme="dark"] .privacy-link:hover {
-    border-bottom-color: #60a5fa;
+    border-bottom-color: #fb923c;
 }
 
 .checkbox-error-message {
@@ -946,18 +946,18 @@ section {
     }
     
     .checkmark {
-        width: 13px !important;
-        height: 13px !important;
-        min-width: 13px !important;
-        min-height: 13px !important;
-        max-width: 13px !important;
-        max-height: 13px !important;
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
         border-radius: 50% !important;
         border-width: 2px !important;
     }
     
     .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-        font-size: 8px !important;
+        font-size: 10px !important;
     }
 }
 
@@ -1042,18 +1042,18 @@ section {
     }
     
     .checkmark {
-        width: 12px !important;
-        height: 12px !important;
-        min-width: 12px !important;
-        min-height: 12px !important;
-        max-width: 12px !important;
-        max-height: 12px !important;
+        width: 14px !important;
+        height: 14px !important;
+        min-width: 14px !important;
+        min-height: 14px !important;
+        max-width: 14px !important;
+        max-height: 14px !important;
         border-radius: 50% !important;
         border-width: 2px !important;
     }
     
     .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-        font-size: 7px !important;
+        font-size: 8px !important;
     }
 }
 
